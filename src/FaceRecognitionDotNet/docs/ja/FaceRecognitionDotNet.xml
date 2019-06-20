@@ -1,0 +1,467 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FaceRecognitionDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:FaceRecognitionDotNet.DisposableObject">
+            <summary>
+            マネージまたはアンマネージ リソースを持つクラスを表します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.DisposableObject.IsDisposed">
+            <summary>
+            インスタンスが破棄されているかどうかを示す値を取得します。
+            </summary>
+            <returns>インスタンスが破棄されている場合は true。それ以外の場合は false。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.DisposableObject.ThrowIfDisposed">
+            <summary>
+            オブジェクトが破棄されている場合、<see cref="T:System.ObjectDisposedException"/> がスローされます。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.DisposableObject.DisposeManaged">
+            <summary>
+            マネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.DisposableObject.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.DisposableObject.Dispose">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.DisposableObject"/> によって使用されている全てのリソースを解放します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.DisposableObject.Dispose(System.Boolean)">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.DisposableObject"/> によって使用されている全てのリソースを解放します。
+            </summary>
+            <param name="disposing"><see cref="M:System.IDisposable.Dispose"/> メソッドが呼ばれたかどうかを示す値。</param>
+        </member>
+        <member name="T:FaceRecognitionDotNet.FaceEncoding">
+            <summary>
+            顔の特徴データを表現します。このクラスは継承できません。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.FaceEncoding.Size">
+            <summary>
+            特徴データのサイズを取得します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceEncoding.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceEncoding.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            <see cref="T:System.Runtime.Serialization.SerializationInfo"/> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。
+            </summary>
+            <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo"/>。</param>
+            <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext"/> を参照)。</param>
+        </member>
+        <member name="T:FaceRecognitionDotNet.FacePart">
+            <summary>
+            顔の構成要素を指定します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.Chin">
+            <summary>
+            顎を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.LeftEyebrow">
+            <summary>
+            左眉を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.RightEyebrow">
+            <summary>
+            右眉を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.NoseBridge">
+            <summary>
+            鼻梁を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.NoseTip">
+            <summary>
+            鼻尖を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.LeftEye">
+            <summary>
+            左眼 を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.RightEye">
+            <summary>
+            右眼 を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.TopLip">
+            <summary>
+            上唇を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.BottomLip">
+            <summary>
+            下唇を示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.FacePart.Nose">
+            <summary>
+            鼻を示します。
+            </summary>
+        </member>
+        <member name="T:FaceRecognitionDotNet.FaceRecognition">
+            <summary>
+            顔を探索、認識するメソッドを提供します。このクラスは継承できません。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.#ctor(System.String)">
+            <summary>
+            モデルファイルを格納しているディレクトリ パスを指定して、<see cref="T:FaceRecognitionDotNet.FaceRecognition"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+            <param name="directory">モデルファイルを格納しているディレクトリ パス。</param>
+            <exception cref="T:System.IO.FileNotFoundException">モデルファイルが見つかりません。</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリ パスが見つかりません。</exception>
+        </member>
+        <member name="P:FaceRecognitionDotNet.FaceRecognition.IsDisposed">
+            <summary>
+            このオブジェクトが破棄されているかどうかを示す値を取得します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.BatchFaceLocations(System.Collections.Generic.IEnumerable{FaceRecognitionDotNet.Image},System.Int32,System.Int32)">
+            <summary>
+            CNN (畳み込みニューラルネットワーク) 顔検出器を使用して画像内の人間の顔のバウンディング ボックスの配列の列挙可能なコレクションを返します。
+            </summary>
+            <param name="images">画像の列挙可能なコレクション。</param>
+            <param name="numberOfTimesToUpsample">顔を探索する画像の数。大きいほどより小さな顔を探索します。</param>
+            <param name="batchSize">各 GPU 処理バッチに含まれる画像の数。</param>
+            <returns>見つかった顔の矩形の配列の列挙可能なコレクション。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="images"/> が null です。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.CompareFace(FaceRecognitionDotNet.FaceEncoding,FaceRecognitionDotNet.FaceEncoding,System.Double)">
+            <summary>
+            既知の顔エンコーディングを候補エンコーディングと比較し、一致するかどうかを確認します。
+            </summary>
+            <param name="knownFaceEncoding">既知の顔エンコーディング。</param>
+            <param name="faceEncodingToCheck">既知の顔エンコーディングと比較する単一の顔エンコーディング。</param>
+            <param name="tolerance">一致したと見なす顔同士の距離。低いほどより厳密です。規定値は 0.6 です。</param>
+            <returns>既知の顔エンコーディングがチェックする顔エンコーディングと一致するかどうかを示す true/false 値のリスト。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="knownFaceEncoding"/> または <paramref name="faceEncodingToCheck"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="knownFaceEncoding"/> または <paramref name="faceEncodingToCheck"/> は破棄されています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.CompareFaces(System.Collections.Generic.IEnumerable{FaceRecognitionDotNet.FaceEncoding},FaceRecognitionDotNet.FaceEncoding,System.Double)">
+            <summary>
+            顔エンコーディングの列挙可能なコレクションを候補エンコーディングと比較し、一致するかどうかを確認します。
+            </summary>
+            <param name="knownFaceEncodings">既知の顔エンコーディングの列挙可能なコレクション。</param>
+            <param name="faceEncodingToCheck">列挙可能なコレクションと比較する単一の顔エンコーディング。</param>
+            <param name="tolerance">一致したと見なす顔同士の距離。低いほどより厳密です。規定値は 0.6 です。</param>
+            <returns>既知の顔エンコーディングがチェックする顔エンコーディングと一致するかどうかを示す true/false 値の列挙可能なコレクション。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="knownFaceEncodings"/> または <paramref name="faceEncodingToCheck"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="faceEncodingToCheck"/> は破棄されています。または <paramref name="knownFaceEncodings"/> に破棄済みのオブジェクトが含まれています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.Create(System.String)">
+            <summary>
+            <see cref="T:FaceRecognitionDotNet.FaceRecognition"/> クラスの新しいインスタンスを作成します。
+            </summary>
+            <param name="directory">モデルファイルを格納しているディレクトリ パス。</param>
+            <exception cref="T:System.IO.FileNotFoundException">モデルファイルが見つかりません。</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリ パスが見つかりません。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.FaceDistance(FaceRecognitionDotNet.FaceEncoding,FaceRecognitionDotNet.FaceEncoding)">
+            <summary>
+            既知の顔エンコーディングと比較し、顔ユークリッド距離を取得します。
+            </summary>
+            <param name="faceEncoding">比較する顔エンコーディング。</param>
+            <param name="faceToCompare">比較する顔エンコーディングのもう一対。</param>
+            <returns>比較する顔のユークリッド距離。顔が完全に一致する場合は 0。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="faceEncoding"/> または <paramref name="faceToCompare"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="faceEncoding"/> または <paramref name="faceToCompare"/> は破棄されています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.FaceDistances(System.Collections.Generic.IEnumerable{FaceRecognitionDotNet.FaceEncoding},FaceRecognitionDotNet.FaceEncoding)">
+            <summary>
+            顔エンコーディングの列挙可能なコレクションと既知の顔エンコーディングを比較し、顔ユークリッド距離の列挙可能なコレクションを取得します。
+            </summary>
+            <param name="faceEncodings">比較する顔エンコーディングの列挙可能なコレクション。</param>
+            <param name="faceToCompare">比較する顔エンコーディングのもう一対。</param>
+            <returns>比較する顔のユークリッド距離の列挙可能なコレクション。顔が完全に一致する場合は 0。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="faceEncodings"/> または <paramref name="faceToCompare"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="faceToCompare"/> は破棄されています。または <paramref name="faceEncodings"/> に破棄済みのオブジェクトが含まれています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.FaceEncodings(FaceRecognitionDotNet.Image,System.Collections.Generic.IEnumerable{FaceRecognitionDotNet.Location},System.Int32)">
+            <summary>
+            指定した画像内の全ての顔に対応する顔特徴データの列挙可能なコレクションを返します。
+            </summary>
+            <param name="image">顔を含む画像。画像には複数の顔を含めることができます。</param>
+            <param name="knownFaceLocation">顔に対する矩形位置の列挙可能なコレクション。null を指定した場合、メソッドが顔の位置を探索します。</param>
+            <param name="numJitters">エンコーディングを計算する際の顔のリサンプリング回数。</param>
+            <returns>指定した画像内の全ての顔に対応する顔特徴データの列挙可能なコレクション。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="image"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="image"/> またはこのオブジェクトは破棄されています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.FaceLandmark(FaceRecognitionDotNet.Image,System.Collections.Generic.IEnumerable{FaceRecognitionDotNet.Location},FaceRecognitionDotNet.PredictorModel)">
+            <summary>
+            画像内の各顔に対する、眼、鼻等の顔の構成要素の辞書の列挙可能なコレクションを返します。
+            </summary>
+            <param name="faceImage">顔を含む画像。画像には複数の顔を含めることができます。</param>
+            <param name="faceLocations">顔に対する矩形位置の列挙可能なコレクション。null を指定した場合、メソッドが顔の位置を探索します。</param>
+            <param name="model">検出器から返されるベクトルの次元数。</param>
+            <returns>眼、鼻等の顔の構成要素の辞書の列挙可能なコレクション。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="faceImage"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="faceImage"/> またはこのオブジェクトは破棄されています。</exception>
+            <exception cref="T:System.NotSupportedException">helen-dataset.dat が存在しません。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.FaceLocations(FaceRecognitionDotNet.Image,System.Int32,FaceRecognitionDotNet.Model)">
+            <summary>
+            指定した画像内の全ての顔に対応する顔の位置の列挙可能なコレクションを返します。
+            </summary>
+            <param name="image">顔を含む画像。画像には複数の顔を含めることができます。</param>
+            <param name="numberOfTimesToUpsample">顔を探索する際の顔のアップサンプリング回数。</param>
+            <param name="model">画像内で顔の検出を行う顔検出器のモデル。</param>
+            <returns>指定した画像内の全ての顔に対応する顔の位置の列挙可能なコレクション。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="image"/> が null です。</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="image"/> またはこのオブジェクトは破棄されています。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.LoadFaceEncoding(System.Double[])">
+            <summary>
+            <see cref="T:System.Double"/> 配列から <see cref="T:FaceRecognitionDotNet.FaceEncoding"/> を作成します。
+            </summary>
+            <param name="encoding">顔エンコーディング データを含む <see cref="T:System.Double"/> 配列。</param>
+            <returns>このメソッドが作成した <see cref="T:FaceRecognitionDotNet.FaceEncoding"/>。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="encoding"/> が null です。</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="encoding"/> は 128 です。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.LoadImage(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            <see cref="T:System.Byte"/> 配列から <see cref="T:FaceRecognitionDotNet.Image"/> を作成します。
+            </summary>
+            <param name="array">画像データを含む <see cref="T:System.Byte"/> 配列。</param>
+            <param name="row">画像データの行数。</param>
+            <param name="column">画像データの列数。</param>
+            <param name="elementSize">画像要素のバイト単位のサイズ。</param>
+            <returns>このメソッドが作成した <see cref="T:FaceRecognitionDotNet.Image"/>。</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> が null です。</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="elementSize"/> は 3 または 1 です。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.LoadImageFile(System.String,FaceRecognitionDotNet.Mode)">
+            <summary>
+            指定したパスから <see cref="T:FaceRecognitionDotNet.Image"/> を作成します。
+            </summary>
+            <param name="file"><see cref="T:FaceRecognitionDotNet.Image"/> を生成するファイルのパスを含む文字列。</param>
+            <param name="mode">画像のカラー モード。</param>
+            <returns>このメソッドが作成した <see cref="T:FaceRecognitionDotNet.Image"/>。</returns>
+            <exception cref="T:System.IO.FileNotFoundException">指定したパスは存在しません。</exception>
+        </member>
+        <member name="M:FaceRecognitionDotNet.FaceRecognition.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="T:FaceRecognitionDotNet.Image">
+            <summary>
+            画像データを表現します。このクラスは継承できません。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Image.Height">
+            <summary>
+            画像の高さを取得します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Image.Width">
+            <summary>
+            画像の幅を取得します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Image.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="T:FaceRecognitionDotNet.Location">
+            <summary>
+            顔の左端、上端、右端、下端位置を説明します。このクラスは継承できません。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            左端、上端、右端、下端を指定して、<see cref="T:FaceRecognitionDotNet.Location"/> 構造体の新しいインスタンスを初期化します。
+            </summary>
+            <param name="left">顔の矩形の左側の X 軸の値。</param>
+            <param name="top">顔の矩形の上側の Y 軸の値。</param>
+            <param name="right">顔の矩形の右側の X 軸の値。</param>
+            <param name="bottom">顔の矩形の下側の Y 軸の値。</param>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Location.Bottom">
+            <summary>
+            顔の矩形の下側の Y 軸の値を取得します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Location.Left">
+            <summary>
+            顔の矩形の左側の X 軸の値を取得します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Location.Right">
+            <summary>
+            顔の矩形の右側の X 軸の値を取得します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Location.Top">
+            <summary>
+            顔の矩形の上側の Y 軸の値を取得します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.Equals(FaceRecognitionDotNet.Location)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Location"/> クラスを比較して、等しいかどうかを確認します。
+            </summary>
+            <param name="other">このインスタンスと比較する顔の矩形。</param>
+            <returns>両方の <see cref="T:FaceRecognitionDotNet.Location"/> クラスが同じ <see cref="P:FaceRecognitionDotNet.Location.Left"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Top"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Right"/> 値と <see cref="P:FaceRecognitionDotNet.Location.Bottom"/> 値を含む場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.Equals(System.Object)">
+            <summary>
+            指定した <see cref="T:System.Object"/> が <see cref="T:FaceRecognitionDotNet.Location"/> であり、この <see cref="T:FaceRecognitionDotNet.Location"/> と同じ顔の矩形を含んでいるかどうかを判断します。
+            </summary>
+            <param name="obj">比較対象の <see cref="T:System.Object"/>。</param>            
+            <returns><paramref name="obj"/> が <see cref="T:FaceRecognitionDotNet.Location"/> であり、この <see cref="T:FaceRecognitionDotNet.Location"/> と同じ <see cref="P:FaceRecognitionDotNet.Location.Left"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Top"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Right"/> 値と <see cref="P:FaceRecognitionDotNet.Location.Bottom"/> 値を含んでいる場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.GetHashCode">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.Location"/> のハッシュ コードを返します。
+            </summary>
+            <returns>この <see cref="T:FaceRecognitionDotNet.Location"/> クラスのハッシュ コード。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.op_Equality(FaceRecognitionDotNet.Location,FaceRecognitionDotNet.Location)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Location"/> クラスを比較して、等しいかどうかを確認します。
+            </summary>
+            <param name="location1">比較する最初の <see cref="T:FaceRecognitionDotNet.Location"/> クラス。</param>
+            <param name="location2">比較する 2 番目の <see cref="T:FaceRecognitionDotNet.Location"/> クラス。</param>
+            <returns><paramref name="location1"/> および <paramref name="location2"/> の <see cref="P:FaceRecognitionDotNet.Location.Left"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Top"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Right"/> 値と <see cref="P:FaceRecognitionDotNet.Location.Bottom"/> 値が等しい場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Location.op_Inequality(FaceRecognitionDotNet.Location,FaceRecognitionDotNet.Location)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Location"/> クラスを比較し、等しくないかどうかを確認します。
+            </summary>
+            <param name="location1">比較する最初の <see cref="T:FaceRecognitionDotNet.Location"/> クラス。</param>
+            <param name="location2">比較する 2 番目の <see cref="T:FaceRecognitionDotNet.Location"/> クラス。</param>
+            <returns><paramref name="location1"/> と <paramref name="location2"/> の <see cref="P:FaceRecognitionDotNet.Location.Left"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Top"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Right"/> 値または <see cref="P:FaceRecognitionDotNet.Location.Bottom"/> 値が異なる場合は <code>true</code>。<paramref name="location1"/> と <paramref name="location2"/> の <see cref="P:FaceRecognitionDotNet.Location.Left"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Top"/> 値、<see cref="P:FaceRecognitionDotNet.Location.Right"/> 値または <see cref="P:FaceRecognitionDotNet.Location.Bottom"/> 値が同じ場合は <code>false</code>。</returns>
+        </member>
+        <member name="T:FaceRecognitionDotNet.Mode">
+            <summary>
+            画像のモードを指定します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.Mode.Rgb">
+            <summary>
+            RGB (8 ビットの赤、緑、青の 3 チャンネル) の画像モードを示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.Mode.Greyscale">
+            <summary>
+            グレイスケールの画像モードを示します。
+            </summary>
+        </member>
+        <member name="T:FaceRecognitionDotNet.Model">
+            <summary>
+            顔検出器のモデルを指定します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.Model.Hog">
+            <summary>
+            HOG (方向つき勾配のヒストグラム) に基づいた顔検出器のモデルを示します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.Model.Cnn">
+            <summary>
+            CNN (畳み込みニューラルネットワーク) に基づいた顔検出器のモデルを示します。
+            </summary>
+        </member>
+        <member name="T:FaceRecognitionDotNet.Point">
+            <summary>
+            2 次元平面に点を定義する、整数座標ペア (x 座標と y 座標) を表します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.#ctor(System.Int32,System.Int32)">
+            <summary>
+            座標を指定して、<see cref="T:FaceRecognitionDotNet.Point"/> 構造体の新しいインスタンスを作成します。
+            </summary>
+            <param name="x">点の水平位置。</param>
+            <param name="y">点の垂直位置。</param>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Point.X">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.Point"/> の x 座標を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:FaceRecognitionDotNet.Point.Y">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.Point"/> の y 座標を取得または設定します。
+            </summary>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.Equals(FaceRecognitionDotNet.Point)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Point"/> 構造体を比較して、等しいかどうかを確認します。
+            </summary>
+            <param name="other">このインスタンスと比較する座標。</param>
+            <returns>両方の <see cref="T:FaceRecognitionDotNet.Point"/> 構造体が同じ <see cref="P:FaceRecognitionDotNet.Point.X"/> 値と <see cref="P:FaceRecognitionDotNet.Point.Y"/> 値を含む場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.Equals(System.Object)">
+            <summary>
+            指定した <see cref="T:System.Object"/> が <see cref="T:FaceRecognitionDotNet.Point"/> であり、この <see cref="T:FaceRecognitionDotNet.Point"/> と同じ座標を含んでいるかどうかを判断します。
+            </summary>
+            <param name="obj">比較対象の <see cref="T:System.Object"/>。</param>
+            <returns><paramref name="obj"/> が <see cref="T:FaceRecognitionDotNet.Point"/> であり、この <see cref="T:FaceRecognitionDotNet.Point"/> と同じ <see cref="P:FaceRecognitionDotNet.Point.X"/> 値と <see cref="P:FaceRecognitionDotNet.Point.Y"/> 値を含んでいる場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.GetHashCode">
+            <summary>
+            この <see cref="T:FaceRecognitionDotNet.Point"/> のハッシュ コードを返します。
+            </summary>
+            <returns>この <see cref="T:FaceRecognitionDotNet.Point"/> 構造体のハッシュ コード。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.op_Equality(FaceRecognitionDotNet.Point,FaceRecognitionDotNet.Point)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Point"/> 構造体を比較して、等しいかどうかを確認します。
+            </summary>
+            <param name="point1">比較する最初の <see cref="T:FaceRecognitionDotNet.Point"/> 構造体。</param>
+            <param name="point2">比較する 2 番目の <see cref="T:FaceRecognitionDotNet.Point"/> 構造体。</param>
+            <returns><paramref name="point1"/> および <paramref name="point2"/> の <see cref="P:FaceRecognitionDotNet.Point.X"/> 座標と <see cref="P:FaceRecognitionDotNet.Point.Y"/> 座標が等しい場合は <code>true</code>。それ以外の場合は <code>false</code>。</returns>
+        </member>
+        <member name="M:FaceRecognitionDotNet.Point.op_Inequality(FaceRecognitionDotNet.Point,FaceRecognitionDotNet.Point)">
+            <summary>
+            2 つの <see cref="T:FaceRecognitionDotNet.Point"/> 構造体を比較し、等しくないかどうかを確認します。
+            </summary>
+            <param name="point1">比較する最初の <see cref="T:FaceRecognitionDotNet.Point"/> 構造体。</param>
+            <param name="point2">比較する 2 番目の <see cref="T:FaceRecognitionDotNet.Point"/> 構造体。</param>
+            <returns><paramref name="location1"/> と <paramref name="point2"/> の <see cref="P:FaceRecognitionDotNet.Point.X"/> 座標または <see cref="P:FaceRecognitionDotNet.Point.Y"/> 座標が異なる場合は <code>true</code>。<paramref name="point1"/> と <paramref name="point2"/> の <see cref="P:FaceRecognitionDotNet.Point.X"/> 座標、<see cref="P:FaceRecognitionDotNet.Point.Y"/> 座標が同じ場合は <code>false</code>。</returns>
+        </member>
+        <member name="T:FaceRecognitionDotNet.PredictorModel">
+            <summary>
+            検出器から返されるベクトルの次元数を指定します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.PredictorModel.Large">
+            <summary>
+            大規模な検出器を示します。検出器は顔の表現に 68 点を返します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.PredictorModel.Small">
+            <summary>
+            小規模な検出器を示します。検出器は顔の表現に 5 点を返します。
+            </summary>
+        </member>
+        <member name="F:FaceRecognitionDotNet.PredictorModel.Helen">
+            <summary>
+            Helen データセットによる検出器を示します。検出器は顔の表現に 194 点を返します。
+            </summary>
+        </member>
+    </members>
+</doc>
