@@ -108,7 +108,8 @@ namespace FaceDetection
 
                 ///So sánh tắt cả các khuôn mặt có trong ảnh với mới mặt cho trước.
                 //string face = "ImageLib/check.jpg";
-                string face = "ImageLib/check2.jpg";
+                //string face = "ImageLib/check2.jpg";
+                string face = "ImageLib/buffertest.jpg";
                 string dir = "ImageLib";
                 CompareImage(dir, face);
 

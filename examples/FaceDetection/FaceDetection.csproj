@@ -6,6 +6,84 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ImageLib\64787737_1777895555689758_983678679085219840_n.jpg" />
+    <None Remove="ImageLib\buffertest.jpg" />
+    <None Remove="ImageLib\buffertest2.jpg" />
+    <None Remove="ImageLib\check.jpg" />
+    <None Remove="ImageLib\check2.jpg" />
+    <None Remove="ImageLib\copa-america-2019-dong-doi-cua-messi-thua-xa-brazil-thieu-neymar.jpg" />
+    <None Remove="ImageLib\GettyImages-1137688781.jpg" />
+    <None Remove="ImageLib\lionel-messi-barcelona-2018_1xg1fkjpqfod01tqfk53mrci3l.jpg" />
+    <None Remove="ImageLib\messi-colombia-1235452.jpg" />
+    <None Remove="ImageLib\messi_argentina.jpg" />
+    <None Remove="ImageLib\obama-1080p.jpg" />
+    <None Remove="ImageLib\obama-480p.jpg" />
+    <None Remove="ImageLib\ronaldo-gioi-da-chung-ket-messi-con-gioi-hon.jpg" />
+    <None Remove="models\dlib_face_recognition_resnet_model_v1.dat" />
+    <None Remove="models\mmod_human_face_detector.dat" />
+    <None Remove="models\shape_predictor_5_face_landmarks.dat" />
+    <None Remove="models\shape_predictor_68_face_landmarks.dat" />
+    <None Remove="output\tmp.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ImageLib\64787737_1777895555689758_983678679085219840_n.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\buffertest.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\buffertest2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\check.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\check2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\copa-america-2019-dong-doi-cua-messi-thua-xa-brazil-thieu-neymar.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\GettyImages-1137688781.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\lionel-messi-barcelona-2018_1xg1fkjpqfod01tqfk53mrci3l.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\messi-colombia-1235452.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\messi_argentina.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\obama-1080p.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\obama-480p.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImageLib\ronaldo-gioi-da-chung-ket-messi-con-gioi-hon.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\dlib_face_recognition_resnet_model_v1.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\mmod_human_face_detector.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\shape_predictor_5_face_landmarks.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\shape_predictor_68_face_landmarks.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output\tmp.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
   </ItemGroup>
